@@ -1,4 +1,5 @@
 import 'package:chatapp/constants.dart';
+import 'package:chatapp/screens/ChatScreen.dart';
 import 'package:chatapp/screens/Register.dart';
 import 'package:chatapp/widgets/CustomButton.dart';
 import 'package:chatapp/widgets/customtexfield.dart';
@@ -95,7 +96,8 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {});
                         try {
                           await RegisiterUser();
-
+                          Navigator.pushNamed(context, ChatScreen.id,
+                              arguments: Email);
                           ShowBar(context, 'Success');
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
@@ -110,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {});
                       } else {}
                     },
-                    text: 'REGISTER'),
+                    text: 'LOGIN'),
                 SizedBox(
                   height: 10,
                 ),

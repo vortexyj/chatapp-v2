@@ -1,3 +1,4 @@
+import 'package:chatapp/screens/ChatScreen.dart';
 import 'package:chatapp/screens/Register.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ class ChatApp extends StatelessWidget {
       routes: {
         LoginPage.id: (context) => LoginPage(),
         RegisterPage.id: (context) => RegisterPage(),
+        ChatScreen.id: (context) => ChatScreen(),
       },
       initialRoute: 'LoginPage',
     );

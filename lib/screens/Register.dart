@@ -102,6 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           await RegisiterUser();
 
                           ShowBar(context, 'Success');
+                          Navigator.pop(context);
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             ShowBar(context, 'Weak Password');
