@@ -98,10 +98,10 @@ class _LoginPageState extends State<LoginPage> {
 
                           ShowBar(context, 'Success');
                         } on FirebaseAuthException catch (e) {
-                          if (e.code == 'weak-password') {
-                            ShowBar(context, 'Weak Password');
-                          } else if (e.code == 'email-already-in-use') {
-                            ShowBar(context, 'Email in used');
+                          if (e.code == 'user-not-found') {
+                            ShowBar(context, 'User not found');
+                          } else if (e.code == 'worng-password') {
+                            ShowBar(context, 'Worng Password');
                           }
                         } catch (e) {
                           ShowBar(context, 'there was an error');
